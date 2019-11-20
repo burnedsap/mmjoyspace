@@ -74,17 +74,16 @@ function setup() {
 	placeImages();
 	isDragging = false;
 	var canvas = createCanvas(windowWidth, windowHeight);
-	canvas.parent('sketch-holder')
-//button1 = createButton('background');
-//  button1.position(windowWidth/5, 65);
-button1 = document.getElementById('world-button');
-button1.addEventListener('click', () => {
-	 bg = backarray[floor(random(0, 7))];
-});	  
+	canvas.parent('sketch-holder');
+
+	button1 = document.getElementById('world-button');
+	button1.addEventListener('click', () => {
+		bg = backarray[floor(random(0, 7))];
+	});	  
 
 button2 = document.getElementById('save-button');
 button2.addEventListener('click', () => {
-		saveCanvas('myCanvas', 'jpg');
+		saveCanvas('My Joyspace', 'jpg');
 	
 	 });
 	  	  
@@ -96,18 +95,25 @@ button2.addEventListener('click', () => {
 function placeImages() {
 	for (var i = 0; i < imarray.length; i++) {
 		imarray[i].resize(0, 100);
-		var pos = randomPos(imarray[i].width, imarray[i].height);
+		
+		if(i<imarray.length/2) {
+			var pos = createVector(100, map(i, 0, imarray.length/2, 50, windowHeight-50));
+		}
+		else {
+			var pos = createVector(windowWidth-100, map(i, imarray.length/2, imarray.length, 50, windowHeight-50));
+			console.log(pos);
+		}
 		rects.push(new Rectangle(pos, imarray[i]));
 	}
 }
 
-function repeatImage(num) {
-	var pfs = randomPos(imarray[num].width, imarray[num].height);
-	rects.push(new Rectangle(pfs, imarray[num]));
+
+function randomPos1(marginRight, marginBottom) {
+	return createVector(50, random(50, windowHeight - marginBottom));
 }
 
-function randomPos(marginRight, marginBottom) {
-	return createVector(50, random(50, windowHeight - marginBottom));
+function randomPos2(marginRight, marginBottom) {
+	return createVector(windowWidth-50, random(50, windowHeight - marginBottom));
 }
 
 function draw() {
@@ -130,7 +136,6 @@ function mousePressed() {
 			isDragging = true;
 			dragRec = r;
 			index = i;
-			console.log(rects[m]);
 		}
 	});
 	if (isDragging) {
