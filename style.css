@@ -1,7 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--blue: #1a53ff;
+	--yellow: #ffea01;
+}
+
 .header-section {
 	width: 100%;
+	background: var(--blue);
+	padding-bottom: 50px;
 }
 
 .header-container {
@@ -17,13 +34,14 @@
 .header-container h1 {
 	text-align: center;
 	font-family: Montserrat;
-	font-size: 45px;
+	font-size: 55px;
+	color: white;
 }
 
 .world-button {
-background-color: #4CAF50; /* Green */
+background-color: var(--yellow);
  border: none;
- color: white;
+ color: black;
  padding: 15px 32px;
  text-align: center;
  text-decoration: none;
@@ -33,24 +51,28 @@ background-color: #4CAF50; /* Green */
 font-family: Montserrat;
 font-weight: 700;
 font-size: 16px;
+margin: 20px;
 }
 
 .footer-section {
 	width: 100%;
 	margin-top: 50px;
 	margin-bottom: 50px;
+	background: var(--blue);
 }
 
 .footer-container {
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 100px;
 }
 
 .footer-grid {
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	color: white;
 }
 
 .footer-one h2 {
@@ -66,10 +88,21 @@ font-size: 16px;
 	font-size: 18px;
 }
 
+.footer-one {
+	/*display: flex;*/
+	align-items: center;
+	justify-content: center;
+}
+.footer-two {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
 .save-button {
-background-color: #4CAF50; /* Green */
+background-color: var(--yellow);
  border: none;
- color: white;
+ color: black;
  padding: 15px 32px;
  text-align: center;
  text-decoration: none;
@@ -79,5 +112,5 @@ background-color: #4CAF50; /* Green */
 font-family: Montserrat;
 font-weight: 700;
 font-size: 16px;
-float: right;
+
 }
