@@ -40,13 +40,13 @@ var bath, bed, coconut, coffee, color, cookie, guitar, ice1, ice2, leaf2, leaf3,
 var imarray = [];
 var backarray = [];
 function preload() {
-	back1 = loadImage("autumn road.jpg");
-	back2 = loadImage("beach.jpg");
-	back3 = loadImage("forest.jpg");
-	back4 = loadImage("long drive.jpg");
-	back5 = loadImage("mountain roads.jpg");
-	back6 = loadImage("mountains.jpg");
-	back7 = loadImage("railway tunnel.jpg");
+	back1 = loadImage("1.jpg");
+	back2 = loadImage("2.jpg");
+	back3 = loadImage("3.jpg");
+	back4 = loadImage("4.jpg");
+	back5 = loadImage("5.jpg");
+	back6 = loadImage("6.jpg");
+	back7 = loadImage("7.jpg");
 	bath = loadImage("bath tub.png");
 	bed = loadImage("bed.png");
 	coconut = loadImage("coconut trees.png");
@@ -95,10 +95,10 @@ function placeImages() {
 		imarray[i].resize(0, 100);
 		
 		if(i<imarray.length/2) {
-			var pos = createVector(100, map(i, 0, imarray.length/2, 50, windowHeight-50));
+			var pos = createVector(75, map(i, 0, imarray.length/2, 50, windowHeight-50));
 		}
 		else {
-			var pos = createVector(windowWidth-100, map(i, imarray.length/2, imarray.length, 50, windowHeight-50));
+			var pos = createVector(windowWidth-150, map(i, imarray.length/2, imarray.length, 50, windowHeight-50));
 			console.log(pos);
 		}
 		rects.push(new Rectangle(pos, imarray[i]));
