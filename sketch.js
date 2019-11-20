@@ -68,8 +68,6 @@ function preload() {
 }
 
 function setup() {
-	  imageMode(CENTER);
-	
 	rects = [];
 	placeImages();
 	isDragging = false;
@@ -119,7 +117,10 @@ function randomPos2(marginRight, marginBottom) {
 function draw() {
 	clear();
 	bg.resize(windowWidth*0.6, 0);
+		  imageMode(CENTER);
+	
 	image(bg, windowWidth/2, windowHeight/2);
+	imageMode(CORNER)
 
 	rects.forEach(function(r) {
 		return r.draw();
