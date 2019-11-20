@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+.header-section {
+	width: 100%;
+}
+
+.header-container {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+}
+
+.header-container h1 {
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 45px;
+}
+
+.world-button {
+background-color: #4CAF50; /* Green */
+ border: none;
+ color: white;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ margin: 4px 2px;
+ cursor: pointer;
+font-family: Montserrat;
+font-weight: 700;
+font-size: 16px;
+}
+
+.footer-section {
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.footer-container {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer-grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-one h2 {
+	font-family: Montserrat;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+
+.footer-one li {
+	font-family: Montserrat;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.save-button {
+background-color: #4CAF50; /* Green */
+ border: none;
+ color: white;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ margin: 4px 2px;
+ cursor: pointer;
+font-family: Montserrat;
+font-weight: 700;
+font-size: 16px;
+float: right;
+}

@@ -28,7 +28,7 @@ var Rectangle = (function() {
 
 ());
 
-let button1, button2, button3, button4;
+let button1, button2;
 var bg;
 var back1, back2, back3, back4, back5, back6, back7;
 var rects;
@@ -68,28 +68,34 @@ function preload() {
 }
 
 function setup() {
+	  imageMode(CENTER);
+	
 	rects = [];
 	placeImages();
 	isDragging = false;
-	createCanvas(windowWidth, windowHeight);
-button1 = createButton('forest');
-  button1.position(windowWidth/5, 65);
-	  button1.mousePressed(greet);
+	var canvas = createCanvas(windowWidth, windowHeight);
+	canvas.parent('sketch-holder')
+//button1 = createButton('background');
+//  button1.position(windowWidth/5, 65);
+button1 = document.getElementById('world-button');
+button1.addEventListener('click', () => {
+	 bg = backarray[floor(random(0, 7))];
+});	  
+
+button2 = document.getElementById('save-button');
+button2.addEventListener('click', () => {
+		saveCanvas('myCanvas', 'jpg');
+	
+	 });
+	  	  
 	  bg = back1;
 
 }
 
-function greet() {
-	 console.log("hello");
-//	 bg = back5;
-	 bg = backarray[floor(random(0, 7))];
-	 	console.log(bg);
-	 
-}
 
 function placeImages() {
 	for (var i = 0; i < imarray.length; i++) {
-		imarray[i].resize(0, 150);
+		imarray[i].resize(0, 100);
 		var pos = randomPos(imarray[i].width, imarray[i].height);
 		rects.push(new Rectangle(pos, imarray[i]));
 	}
@@ -101,19 +107,18 @@ function repeatImage(num) {
 }
 
 function randomPos(marginRight, marginBottom) {
-	return createVector(random(0, windowWidth - marginRight), 0);
+	return createVector(50, random(50, windowHeight - marginBottom));
 }
 
 function draw() {
 	clear();
-		bg.resize(windowWidth-200, 0);
-	image(bg, 0, 0);
-//	stroke(0);
-//	strokeWidth(2);
-//	rect(100, 100, 900,900);
+	bg.resize(windowWidth*0.6, 0);
+	image(bg, windowWidth/2, windowHeight/2);
+
 	rects.forEach(function(r) {
 		return r.draw();
 	});
+
 }
 
 function mousePressed() {
